@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const pokemon = require('./models/pokemon')
+const pokemons = require('./models/pokemon')
 
 
 //MVC SETUP
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 //INDEX
 app.get('/pokemon', (req, res) => {
-    res.render(`Index`, {pokemon})
+    res.render(`Index`, {pokemons})
 })
 
 //PORT
