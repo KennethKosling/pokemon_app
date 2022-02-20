@@ -18,6 +18,11 @@ app.get('/pokemon', (req, res) => {
     res.render(`Index`, {pokemons})
 })
 
+//SHOW
+app.get('/pokemon/:id', (req, res) => {
+    res.send(req.params.id)
+})
+
 //PORT
 app.listen(3000, () => {
     console.log('Wynncraft is Great');
