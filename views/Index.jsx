@@ -13,16 +13,16 @@ class Index extends React.Component{
                 <h1>See All The Pokemon!</h1>
                 <ul>
                 {
-                    pokemon.map((pocketmon, i) => {
+                    pokemon.map((pocketmon) => {
                         return(                            
                             
-                            <li key={i}><a href={`/pokemon/${i}`}>{pocketmon.name.charAt(0).toUpperCase() + pocketmon.name.slice(1)}</a></li>
+                            <li key={pocketmon._id}><a href={`/pokemon/${pocketmon._id}`}>{pocketmon.name.charAt(0).toUpperCase() + pocketmon.name.slice(1)}</a></li>
                         )
                     })
                 }
                 </ul>
                 <nav>
-                    <a href='/fruits/new'>Go to the New Page</a>
+                    <a href='/pokemon/new'>Go to the New Page</a>
                 </nav>
             </div>
         )
