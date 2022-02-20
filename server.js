@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const pokemons = require('./models/pokemon')
+const pokemon = require('./models/pokemon')
 
 
 //MVC SETUP
@@ -15,13 +15,13 @@ app.get('/', (req, res) => {
 
 //INDEX
 app.get('/pokemon', (req, res) => {
-    res.render(`Index`, {pokemons})
+    res.render(`Index`, {pokemon})
 })
 
 //SHOW
 app.get('/pokemon/:id', (req, res) => {
-    res.send(req.params.id)
-})
+    res.render('Show', {pokemon})
+});//show page for part 1 doesn't throw any errors but also does not display any image or pokemon name
 
 //PORT
 app.listen(3000, () => {
