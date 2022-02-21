@@ -75,7 +75,25 @@ app.get('/pokemon/:id', (req, res) => {
         }
     })
 });
+
 //show page for part 1 doesn't throw any errors but also does not display an image or name
+
+/*
+Update I managed to fix the issue with Gerimae 
+Previous code was:
+
+app.get('/pokemon/:id', (req, res) => {
+    res.render('Show', {pokemon})
+});
+
+Correct code is:
+
+app.get('/pokemon/:id', (req, res) => {
+    res.render('Show', {
+        pokemon: pokemon[req.params.id]
+    })
+});
+*/
 
 //PORT
 app.listen(3000, () => {
